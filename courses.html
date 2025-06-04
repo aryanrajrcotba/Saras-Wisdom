@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Courses - Saras Wisdom</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <div class="logo">
+            <h1>Saras Wisdom</h1>
+        </div>
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="courses.html" class="active">Courses</a></li>
+            <li><a href="videos.html">Videos</a></li>
+            <li><a href="notes.html">Notes</a></li>
+            <li><a href="index.html#contact">Contact</a></li>
+        </ul>
+        <div class="burger">
+            <div class="line1"></div>
+            <div class="line2"></div>
+            <div class="line3"></div>
+        </div>
+    </nav>
+
+    <!-- Courses Header -->
+    <section class="page-header">
+        <h1>Our Courses</h1>
+        <p>Explore our comprehensive range of educational courses</p>
+    </section>
+
+    <!-- Course Categories -->
+    <section class="course-categories">
+        <div class="category-filters">
+            <button class="filter-btn active" data-category="all">All Courses</button>
+            <button class="filter-btn" data-category="mathematics">Mathematics</button>
+            <button class="filter-btn" data-category="science">Science</button>
+            <button class="filter-btn" data-category="computer-science">Computer Science</button>
+        </div>
+
+        <div class="course-grid">
+            <!-- Mathematics Courses -->
+            <div class="course-card" data-category="mathematics">
+                <div class="course-image">
+                    <img src="https://source.unsplash.com/random/300x200/?mathematics" alt="Basic Mathematics">
+                    <div class="course-level">Beginner</div>
+                </div>
+                <div class="course-content">
+                    <h3>Basic Mathematics</h3>
+                    <p>Master fundamental mathematical concepts and problem-solving skills</p>
+                    <div class="course-details">
+                        <span><i class="fas fa-clock"></i> 8 Weeks</span>
+                        <span><i class="fas fa-video"></i> 24 Lessons</span>
+                        <span><i class="fas fa-book"></i> 12 Quizzes</span>
+                    </div>
+                    <a href="#" class="course-button">Start Learning</a>
+                </div>
+            </div>
+
+            <div class="course-card" data-category="mathematics">
+                <div class="course-image">
+                    <img src="https://source.unsplash.com/random/300x200/?algebra" alt="Advanced Algebra">
+                    <div class="course-level">Advanced</div>
+                </div>
+                <div class="course-content">
+                    <h3>Advanced Algebra</h3>
+                    <p>Deep dive into algebraic concepts and complex problem solving</p>
+                    <div class="course-details">
+                        <span><i class="fas fa-clock"></i> 10 Weeks</span>
+                        <span><i class="fas fa-video"></i> 30 Lessons</span>
+                        <span><i class="fas fa-book"></i> 15 Quizzes</span>
+                    </div>
+                    <a href="#" class="course-button">Start Learning</a>
+                </div>
+            </div>
+
+            <!-- Science Courses -->
+            <div class="course-card" data-category="science">
+                <div class="course-image">
+                    <img src="https://source.unsplash.com/random/300x200/?physics" alt="Physics Fundamentals">
+                    <div class="course-level">Intermediate</div>
+                </div>
+                <div class="course-content">
+                    <h3>Physics Fundamentals</h3>
+                    <p>Learn the basic principles of physics and their applications</p>
+                    <div class="course-details">
+                        <span><i class="fas fa-clock"></i> 12 Weeks</span>
+                        <span><i class="fas fa-video"></i> 36 Lessons</span>
+                        <span><i class="fas fa-book"></i> 18 Quizzes</span>
+                    </div>
+                    <a href="#" class="course-button">Start Learning</a>
+                </div>
+            </div>
+
+            <div class="course-card" data-category="science">
+                <div class="course-image">
+                    <img src="https://source.unsplash.com/random/300x200/?chemistry" alt="Chemistry Basics">
+                    <div class="course-level">Beginner</div>
+                </div>
+                <div class="course-content">
+                    <h3>Chemistry Basics</h3>
+                    <p>Introduction to chemical reactions and molecular structures</p>
+                    <div class="course-details">
+                        <span><i class="fas fa-clock"></i> 8 Weeks</span>
+                        <span><i class="fas fa-video"></i> 24 Lessons</span>
+                        <span><i class="fas fa-book"></i> 12 Quizzes</span>
+                    </div>
+                    <a href="#" class="course-button">Start Learning</a>
+                </div>
+            </div>
+
+            <!-- Computer Science Courses -->
+            <div class="course-card" data-category="computer-science">
+                <div class="course-image">
+                    <img src="https://source.unsplash.com/random/300x200/?programming" alt="Python Programming">
+                    <div class="course-level">Beginner</div>
+                </div>
+                <div class="course-content">
+                    <h3>Python Programming</h3>
+                    <p>Learn Python from scratch and build real-world applications</p>
+                    <div class="course-details">
+                        <span><i class="fas fa-clock"></i> 10 Weeks</span>
+                        <span><i class="fas fa-video"></i> 30 Lessons</span>
+                        <span><i class="fas fa-book"></i> 15 Quizzes</span>
+                    </div>
+                    <a href="#" class="course-button">Start Learning</a>
+                </div>
+            </div>
+
+            <div class="course-card" data-category="computer-science">
+                <div class="course-image">
+                    <img src="https://source.unsplash.com/random/300x200/?web-development" alt="Web Development">
+                    <div class="course-level">Intermediate</div>
+                </div>
+                <div class="course-content">
+                    <h3>Web Development</h3>
+                    <p>Master HTML, CSS, and JavaScript for modern web development</p>
+                    <div class="course-details">
+                        <span><i class="fas fa-clock"></i> 12 Weeks</span>
+                        <span><i class="fas fa-video"></i> 36 Lessons</span>
+                        <span><i class="fas fa-book"></i> 18 Quizzes</span>
+                    </div>
+                    <a href="#" class="course-button">Start Learning</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>About Us</h3>
+                <p>Saras Wisdom is dedicated to providing quality education through various mediums.</p>
+            </div>
+            <div class="footer-section">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="courses.html">Courses</a></li>
+                    <li><a href="videos.html">Videos</a></li>
+                    <li><a href="notes.html">Notes</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Connect With Us</h3>
+                <div class="social-links">
+                    <a href="#"><i class="fab fa-facebook"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-linkedin"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 Saras Wisdom. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html> 
