@@ -991,3 +991,30 @@ footer {
         margin: 0 0.5rem;
     }
 }
+
+.logo {
+  display: flex;
+  align-items: center;
+}
+.logo-link {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  color: inherit;
+}
+.logo-img {
+  height: 2.5rem;
+  margin-right: 0.8rem;
+  border-radius: 4px;
+  object-fit: contain;
+}
+.logo h1 {
+  margin: 0;
+  background: var(--primary-gradient);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  font-weight: 700;
+  font-size: 1.7rem;
+  white-space: nowrap;
+}
