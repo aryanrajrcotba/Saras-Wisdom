@@ -178,6 +178,7 @@ body {
 
 .course-card {
     background: var(--card-gradient);
+    -webkit-backdrop-filter: blur(10px);
     backdrop-filter: blur(10px);
     box-shadow: var(--shadow-lg);
     border-radius: 15px;
@@ -284,6 +285,7 @@ body {
 
 .video-card {
     background: var(--card-gradient);
+    -webkit-backdrop-filter: blur(10px);
     backdrop-filter: blur(10px);
     box-shadow: var(--shadow-lg);
     border-radius: 15px;
@@ -347,6 +349,7 @@ body {
 
 .note-card {
     background: var(--card-gradient);
+    -webkit-backdrop-filter: blur(10px);
     backdrop-filter: blur(10px);
     box-shadow: var(--shadow-lg);
     border-radius: 15px;
@@ -797,4 +800,9 @@ footer {
         font-size: 1.2rem;
         margin: 0 0.5rem;
     }
+}
+
+.contact-form select option {
+    background: #2c3e50; /* A dark background for options */
+    color: #fff; /* White text for options */
 }
