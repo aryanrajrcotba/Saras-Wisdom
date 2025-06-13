@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Courses - Saras Wisdom</title>
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="courses.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
@@ -36,18 +36,18 @@
     <!-- Course Categories -->
     <section class="course-categories">
         <div class="category-filters">
-            <button class="filter-btn active" data-category="all">All Courses</button>
-            <button class="filter-btn" data-category="mathematics">Mathematics</button>
-            <button class="filter-btn" data-category="science">Science</button>
-            <button class="filter-btn" data-category="computer-science">Computer Science</button>
+            <button class="filter-btn active" data-category="all"><i class="fas fa-th-large"></i> All Courses</button>
+            <button class="filter-btn" data-category="mathematics"><i class="fas fa-square-root-alt"></i> Mathematics</button>
+            <button class="filter-btn" data-category="science"><i class="fas fa-atom"></i> Science</button>
+            <button class="filter-btn" data-category="computer-science"><i class="fas fa-laptop-code"></i> Computer Science</button>
         </div>
 
         <div class="course-grid">
             <!-- Mathematics Courses -->
             <div class="course-card" data-category="mathematics">
                 <div class="course-image">
-                    <img src="https://source.unsplash.com/random/300x200/?mathematics" alt="Basic Mathematics">
-                    <div class="course-level">Beginner</div>
+                    <img src="images/bm.jpg" alt="Basic Mathematics">
+                    <span class="course-level">Beginner</span>
                 </div>
                 <div class="course-content">
                     <h3>Basic Mathematics</h3>
@@ -63,8 +63,8 @@
 
             <div class="course-card" data-category="mathematics">
                 <div class="course-image">
-                    <img src="https://source.unsplash.com/random/300x200/?algebra" alt="Advanced Algebra">
-                    <div class="course-level">Advanced</div>
+                    <img src="images/adv_alg.png" alt="Advanced Algebra">
+                    <span class="course-level">Advanced</span>
                 </div>
                 <div class="course-content">
                     <h3>Advanced Algebra</h3>
@@ -81,8 +81,8 @@
             <!-- Science Courses -->
             <div class="course-card" data-category="science">
                 <div class="course-image">
-                    <img src="https://source.unsplash.com/random/300x200/?physics" alt="Physics Fundamentals">
-                    <div class="course-level">Intermediate</div>
+                    <img src="images/phy.jpg" alt="Physics Fundamentals">
+                    <span class="course-level">Intermediate</span>
                 </div>
                 <div class="course-content">
                     <h3>Physics Fundamentals</h3>
@@ -98,8 +98,8 @@
 
             <div class="course-card" data-category="science">
                 <div class="course-image">
-                    <img src="https://source.unsplash.com/random/300x200/?chemistry" alt="Chemistry Basics">
-                    <div class="course-level">Beginner</div>
+                    <img src="images/chem.jpg" alt="Chemistry Basics">
+                    <span class="course-level">Beginner</span>
                 </div>
                 <div class="course-content">
                     <h3>Chemistry Basics</h3>
@@ -116,8 +116,8 @@
             <!-- Computer Science Courses -->
             <div class="course-card" data-category="computer-science">
                 <div class="course-image">
-                    <img src="https://source.unsplash.com/random/300x200/?programming" alt="Python Programming">
-                    <div class="course-level">Beginner</div>
+                    <img src="images/pyhthon.webp" alt="Python Programming">
+                    <span class="course-level">Beginner</span>
                 </div>
                 <div class="course-content">
                     <h3>Python Programming</h3>
@@ -133,8 +133,8 @@
 
             <div class="course-card" data-category="computer-science">
                 <div class="course-image">
-                    <img src="https://source.unsplash.com/random/300x200/?web-development" alt="Web Development">
-                    <div class="course-level">Intermediate</div>
+                    <img src="images/web.jpg" alt="Web Development">
+                    <span class="course-level">Intermediate</span>
                 </div>
                 <div class="course-content">
                     <h3>Web Development</h3>
@@ -181,6 +181,35 @@
         </div>
     </footer>
 
-    <script src="script.js"></script>
+    <script>
+        // Burger menu toggle for mobile
+        const burger = document.querySelector('.burger');
+        const navLinks = document.querySelector('.nav-links');
+        burger.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+            burger.classList.toggle('toggle');
+        });
+
+        // Course filter functionality
+        const filterBtns = document.querySelectorAll('.filter-btn');
+        const courseCards = document.querySelectorAll('.course-card');
+
+        filterBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                filterBtns.forEach(b => b.classList.remove('active'));
+                btn.classList.add('active');
+                const category = btn.getAttribute('data-category');
+                courseCards.forEach(card => {
+                    if (category === 'all' || card.getAttribute('data-category') === category) {
+                        card.style.display = 'flex';
+                        card.classList.add('fade-in');
+                    } else {
+                        card.style.display = 'none';
+                        card.classList.remove('fade-in');
+                    }
+                });
+            });
+        });
+    </script>
 </body>
-</html> 
+</html>

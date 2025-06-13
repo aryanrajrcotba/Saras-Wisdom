@@ -1,1 +1,161 @@
- 
+ <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Notes - Saras Wisdom</title>
+    <link rel="stylesheet" href="notes.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <div class="logo">
+            <h1>Saras Wisdom</h1>
+        </div>
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="courses.html">Courses</a></li>
+            <li><a href="videos.html">Videos</a></li>
+            <li><a href="notes.html" class="active">Notes</a></li>
+            <li><a href="index.html#contact">Contact</a></li>
+        </ul>
+        <div class="burger">
+            <div class="line1"></div>
+            <div class="line2"></div>
+            <div class="line3"></div>
+        </div>
+    </nav>
+
+    <!-- Notes Header -->
+    <section class="page-header">
+        <h1>Study Notes</h1>
+        <p>Browse and download notes for every subject, organized for your convenience</p>
+    </section>
+
+    <!-- Notes Categories -->
+    <section class="notes-categories">
+        <div class="category-filters">
+            <button class="filter-btn active" data-category="all"><i class="fas fa-th-large"></i> All Notes</button>
+            <button class="filter-btn" data-category="mathematics"><i class="fas fa-square-root-alt"></i> Mathematics</button>
+            <button class="filter-btn" data-category="science"><i class="fas fa-atom"></i> Science</button>
+            <button class="filter-btn" data-category="computer-science"><i class="fas fa-laptop-code"></i> Computer Science</button>
+        </div>
+
+        <div class="notes-grid">
+            <!-- Mathematics Notes -->
+            <div class="note-card" data-category="mathematics">
+                <div class="note-icon"><i class="fas fa-file-pdf"></i></div>
+                <div class="note-content">
+                    <h3>Algebra Basics</h3>
+                    <p>Comprehensive notes on algebraic expressions, equations, and problem-solving techniques.</p>
+                    <a href="#" class="download-button"><i class="fas fa-download"></i> Download PDF</a>
+                </div>
+            </div>
+            <div class="note-card" data-category="mathematics">
+                <div class="note-icon"><i class="fas fa-file-pdf"></i></div>
+                <div class="note-content">
+                    <h3>Calculus Essentials</h3>
+                    <p>Key concepts of differentiation and integration, with solved examples.</p>
+                    <a href="#" class="download-button"><i class="fas fa-download"></i> Download PDF</a>
+                </div>
+            </div>
+            <!-- Science Notes -->
+            <div class="note-card" data-category="science">
+                <div class="note-icon"><i class="fas fa-file-pdf"></i></div>
+                <div class="note-content">
+                    <h3>Physics: Newton's Laws</h3>
+                    <p>Detailed notes on the laws of motion, forces, and real-life applications.</p>
+                    <a href="#" class="download-button"><i class="fas fa-download"></i> Download PDF</a>
+                </div>
+            </div>
+            <div class="note-card" data-category="science">
+                <div class="note-icon"><i class="fas fa-file-pdf"></i></div>
+                <div class="note-content">
+                    <h3>Chemistry: Atomic Structure</h3>
+                    <p>Understand atoms, molecules, and the periodic table with clear diagrams.</p>
+                    <a href="#" class="download-button"><i class="fas fa-download"></i> Download PDF</a>
+                </div>
+            </div>
+            <!-- Computer Science Notes -->
+            <div class="note-card" data-category="computer-science">
+                <div class="note-icon"><i class="fas fa-file-pdf"></i></div>
+                <div class="note-content">
+                    <h3>Python Programming</h3>
+                    <p>Beginner-friendly guide to Python syntax, data types, and basic programs.</p>
+                    <a href="#" class="download-button"><i class="fas fa-download"></i> Download PDF</a>
+                </div>
+            </div>
+            <div class="note-card" data-category="computer-science">
+                <div class="note-icon"><i class="fas fa-file-pdf"></i></div>
+                <div class="note-content">
+                    <h3>Web Development Basics</h3>
+                    <p>HTML, CSS, and JavaScript essentials for building your first website.</p>
+                    <a href="#" class="download-button"><i class="fas fa-download"></i> Download PDF</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>About Us</h3>
+                <p>Saras Wisdom is dedicated to providing quality education through various mediums.</p>
+            </div>
+            <div class="footer-section">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="courses.html">Courses</a></li>
+                    <li><a href="videos.html">Videos</a></li>
+                    <li><a href="notes.html">Notes</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Connect With Us</h3>
+                <div class="social-links">
+                    <a href="#"><i class="fab fa-facebook"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-linkedin"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 Saras Wisdom. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Burger menu toggle for mobile
+        const burger = document.querySelector('.burger');
+        const navLinks = document.querySelector('.nav-links');
+        burger.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+            burger.classList.toggle('toggle');
+        });
+
+        // Notes filter functionality
+        const filterBtns = document.querySelectorAll('.filter-btn');
+        const noteCards = document.querySelectorAll('.note-card');
+        filterBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                filterBtns.forEach(b => b.classList.remove('active'));
+                btn.classList.add('active');
+                const category = btn.getAttribute('data-category');
+                noteCards.forEach(card => {
+                    if (category === 'all' || card.getAttribute('data-category') === category) {
+                        card.style.display = 'flex';
+                        card.classList.add('fade-in');
+                    } else {
+                        card.style.display = 'none';
+                        card.classList.remove('fade-in');
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>
