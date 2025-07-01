@@ -54,36 +54,29 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     });
 });
 
-// Form Submission with Mobile Validation
-const contactForm = document.getElementById('contactForm');
-if (contactForm) {
-    contactForm.addEventListener('submit', function(e) {
-        e.preventDefault();
-        
-        // Get form data
-        const formData = new FormData(this);
-        const formObject = {};
-        formData.forEach((value, key) => {
-            formObject[key] = value;
-        });
-        
-        // Basic form validation
-        const email = formObject['email'];
-        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-        
-        if (!emailRegex.test(email)) {
-            alert('Please enter a valid email address');
-            return;
-        }
-        
-        // Here you would typically send the form data to a server
-        console.log('Form submitted:', formObject);
-        
-        // Show success message
-        alert('Thank you for your message! We will get back to you soon.');
-        this.reset();
-    });
+// Custom Thank You Modal
+const thankYouModal = document.getElementById('thankYouModal');
+const closeModal = document.getElementById('closeModal');
+const modalOkBtn = document.getElementById('modalOkBtn');
+
+function showThankYouModal() {
+    thankYouModal.style.display = 'flex';
 }
+function hideThankYouModal() {
+    thankYouModal.style.display = 'none';
+}
+closeModal.onclick = hideThankYouModal;
+modalOkBtn.onclick = hideThankYouModal;
+window.onclick = function(event) {
+    if (event.target === thankYouModal) hideThankYouModal();
+};
+
+// Contact form feedback (custom modal)
+document.getElementById('contactForm').addEventListener('submit', function(e){
+    e.preventDefault();
+    showThankYouModal();
+    this.reset();
+});
 
 // Add animation on scroll with performance optimization
 let scrollTimeout;

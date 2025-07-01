@@ -1018,3 +1018,70 @@ footer {
   font-size: 1.7rem;
   white-space: nowrap;
 }
+
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 9999;
+    left: 0; top: 0;
+    width: 100vw; height: 100vh;
+    background: rgba(44, 62, 80, 0.7);
+    justify-content: center;
+    align-items: center;
+}
+.modal-content {
+    background: #fff;
+    border-radius: 16px;
+    padding: 32px 24px 24px 24px;
+    text-align: center;
+    position: relative;
+    box-shadow: 0 8px 32px rgba(44, 62, 80, 0.2);
+    max-width: 350px;
+    width: 90vw;
+    animation: popIn 0.4s cubic-bezier(.68,-0.55,.27,1.55);
+}
+@keyframes popIn {
+    0% { transform: scale(0.7); opacity: 0; }
+    100% { transform: scale(1); opacity: 1; }
+}
+.modal-icon {
+    font-size: 48px;
+    color: #4BB543;
+    margin-bottom: 12px;
+}
+.modal-content h2 {
+    margin: 0 0 8px 0;
+    color: #4BB543;
+    font-size: 2rem;
+}
+.modal-content p {
+    color: #333;
+    margin-bottom: 24px;
+    font-size: 1.1rem;
+}
+.modal-btn {
+    background: #6c63ff;
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    padding: 10px 28px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background 0.2s;
+    box-shadow: 0 2px 8px rgba(44, 62, 80, 0.08);
+}
+.modal-btn:hover {
+    background: #5548c8;
+}
+.modal-close {
+    position: absolute;
+    top: 12px;
+    right: 18px;
+    font-size: 1.5rem;
+    color: #aaa;
+    cursor: pointer;
+    transition: color 0.2s;
+}
+.modal-close:hover {
+    color: #333;
+}
