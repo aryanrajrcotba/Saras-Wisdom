@@ -1,0 +1,248 @@
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap');
+
+:root {
+    --primary: #00f2fe;
+    --secondary: #4facfe;
+    --accent: #00f2fe;
+    --dark: #1a1a2e;
+    --light: #ffffff;
+}
+
+/* Mobile-first animations */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes slideIn {
+    from { transform: translateX(-100%); }
+    to { transform: translateX(0); }
+}
+
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+    100% { transform: scale(1); }
+}
+
+@keyframes float {
+    0% { transform: translateY(0px); }
+    50% { transform: translateY(-10px); }
+    100% { transform: translateY(0px); }
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+    background: var(--dark);
+    min-height: 100vh;
+    position: relative;
+    color: var(--light);
+    overflow-x: hidden;
+}
+
+.container {
+    max-width: 800px;
+    margin: 40px auto;
+    background: rgba(26, 26, 46, 0.8);
+    padding: 40px;
+    box-shadow: 0 0 30px rgba(0, 242, 254, 0.2);
+    border-radius: 20px;
+    position: relative;
+    z-index: 2;
+    -webkit-backdrop-filter: blur(10px);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(0, 242, 254, 0.1);
+    animation: containerGlow 3s infinite alternate, fadeIn 1s ease-out;
+}
+
+.logo {
+    width: 120px;
+    display: block;
+    margin: 0 auto 30px auto;
+    transition: all 0.3s ease;
+    filter: drop-shadow(0 0 10px rgba(0, 242, 254, 0.5));
+    animation: float 3s ease-in-out infinite;
+}
+
+.logo:hover {
+    transform: scale(1.05) rotate(5deg);
+    filter: drop-shadow(0 0 15px rgba(0, 242, 254, 0.8));
+}
+
+h1 {
+    font-family: 'Orbitron', sans-serif;
+    color: var(--primary);
+    font-size: 2.5em;
+    font-weight: 700;
+    margin-bottom: 10px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    text-shadow: 0 0 10px rgba(0, 242, 254, 0.5);
+    animation: textGlow 2s infinite alternate, fadeIn 1s ease-out 0.3s both;
+}
+
+#date {
+    color: var(--secondary);
+    font-size: 1.1em;
+    margin-bottom: 30px;
+    font-family: 'Orbitron', sans-serif;
+    letter-spacing: 1px;
+    animation: fadeIn 1s ease-out 0.6s both;
+}
+
+.word-box, .quote-box {
+    margin: 30px 0;
+    padding: 25px;
+    border: 1px solid rgba(0, 242, 254, 0.2);
+    border-radius: 15px;
+    background: rgba(26, 26, 46, 0.6);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+    animation: fadeIn 1s ease-out 0.9s both;
+}
+
+.word-box::before, .quote-box::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(0, 242, 254, 0.2), transparent);
+    transition: 0.5s;
+}
+
+.word-box:hover::before, .quote-box:hover::before {
+    left: 100%;
+}
+
+.word-box:hover, .quote-box:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 30px rgba(0, 242, 254, 0.2);
+    border-color: var(--primary);
+}
+
+h2 {
+    font-family: 'Orbitron', sans-serif;
+    color: var(--primary);
+    font-size: 1.8em;
+    font-weight: 600;
+    margin-bottom: 20px;
+    letter-spacing: 1px;
+    animation: fadeIn 1s ease-out 1.2s both;
+}
+
+p {
+    font-size: 1.1em;
+    color: var(--light);
+    line-height: 1.6;
+    animation: fadeIn 1s ease-out 1.5s both;
+}
+
+strong {
+    color: var(--secondary);
+    font-weight: 500;
+}
+
+.design-pattern {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: 
+        radial-gradient(circle at 20% 20%, rgba(0, 242, 254, 0.1) 0%, transparent 50%),
+        radial-gradient(circle at 80% 80%, rgba(79, 172, 254, 0.1) 0%, transparent 50%);
+    z-index: 1;
+    animation: patternMove 20s infinite alternate;
+}
+
+/* Touch-friendly animations for mobile */
+@media (max-width: 768px) {
+    .container {
+        width: 90%;
+        margin: 20px auto;
+        padding: 25px;
+        animation: fadeIn 0.8s ease-out;
+    }
+    
+    h1 { 
+        font-size: 2em;
+        animation: fadeIn 0.8s ease-out 0.2s both;
+    }
+    
+    h2 { 
+        font-size: 1.5em;
+        animation: fadeIn 0.8s ease-out 0.4s both;
+    }
+    
+    p { 
+        font-size: 1em;
+        animation: fadeIn 0.8s ease-out 0.6s both;
+    }
+
+    .word-box, .quote-box {
+        animation: fadeIn 0.8s ease-out 0.8s both;
+    }
+
+    /* Add touch feedback */
+    .word-box:active, .quote-box:active {
+        transform: scale(0.98);
+        transition: transform 0.1s ease;
+    }
+
+    /* Smooth scroll behavior */
+    html {
+        scroll-behavior: smooth;
+    }
+}
+
+/* Add loading animation */
+@keyframes shimmer {
+    0% { background-position: -1000px 0; }
+    100% { background-position: 1000px 0; }
+}
+
+.loading {
+    background: linear-gradient(90deg, 
+        rgba(255,255,255,0) 0%, 
+        rgba(255,255,255,0.2) 50%, 
+        rgba(255,255,255,0) 100%);
+    background-size: 1000px 100%;
+    animation: shimmer 2s infinite linear;
+}
+
+/* Add pull-to-refresh animation */
+@keyframes pullDown {
+    0% { transform: translateY(0); }
+    50% { transform: translateY(20px); }
+    100% { transform: translateY(0); }
+}
+
+.pull-to-refresh {
+    animation: pullDown 1s ease-in-out;
+}
+
+/* Add swipe animations */
+@keyframes swipeLeft {
+    from { transform: translateX(0); }
+    to { transform: translateX(-100%); }
+}
+
+@keyframes swipeRight {
+    from { transform: translateX(0); }
+    to { transform: translateX(100%); }
+}
+
+.swipe-left {
+    animation: swipeLeft 0.3s ease-out;
+}
+
+.swipe-right {
+    animation: swipeRight 0.3s ease-out;
+} 
